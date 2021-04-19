@@ -18,10 +18,14 @@ public class AsyncConfiguration {
 	public Executor taskExecutor() {
 		LOGGER.info("Creating Async Task Executor");
 		final ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(2);
-		executor.setMaxPoolSize(2);
+		//configure no of thread
+		executor.setCorePoolSize(3);
+		// configure maximum no of thred
+		executor.setMaxPoolSize(3);
 		executor.setQueueCapacity(100);
+		// name of the thread
 		executor.setThreadNamePrefix("CarThread-");
+		// initilizes the git push --set-upstream origin master
 		executor.initialize();
 		return executor;
 	}

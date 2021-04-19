@@ -56,7 +56,7 @@ public class CarController {
 			CompletableFuture<List<Car>> cars3 = carService.getAllCars();
 
 			Void join = CompletableFuture.allOf(cars1, cars2, cars3).join();
-			return ResponseEntity.status(HttpStatus.OK).build()
+			return ResponseEntity.status(HttpStatus.OK).build();
 		} catch (final Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
